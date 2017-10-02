@@ -1,7 +1,7 @@
 import time
 import logging
 
-import boto
+import boto3
 
 from core.region_connection import EC2Connection
 
@@ -10,7 +10,7 @@ def terminate_instance(inst):
     '''
     Terminates an instance by name
     
-    :param inst: A boto instance object
+    :param inst: A boto3 instance object
     :return: None, an exception is raised if something goes wrong
     '''
     conn = EC2Connection()
@@ -52,7 +52,7 @@ def create_instance_profile(name, policy):
     delete_instance_profile(name)
     
     # Next, you need to create an Instance Profile in IAM.
-    c = boto.connect_iam()
+    c = boto3.connect_iam()
     instance_profile = c.create_instance_profile(name)
 
     # Once you have the instance profile, you need to create the role, 
@@ -84,7 +84,7 @@ def create_instance_profile(name, policy):
     return name
 
 def delete_instance_profile(name):
-    iam = boto.connect_iam()
+    iam = boto3.connect_iam()
     
     logging.warn('Removing IAM instance profile "%s"' % name)
     
