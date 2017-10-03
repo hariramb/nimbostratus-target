@@ -6,7 +6,7 @@ from fabric.colors import red, yellow, green
 
 
 def configure_logging():
-    logging.getLogger('boto3').setLevel(logging.CRITICAL)
+    logging.getLogger('boto').setLevel(logging.CRITICAL)
     logging.getLogger("paramiko").setLevel(logging.CRITICAL)
     logging.getLogger("requests").setLevel(logging.CRITICAL)
         

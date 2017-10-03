@@ -24,7 +24,7 @@ Usage
 Starting the environment
 ------------------------
 
-Make sure you have configured your "root" AWS credentials in `~/.boto3` before you run the fabric script.
+Make sure you have configured your "root" AWS credentials in `~/.boto` before you run the fabric script.
 
 
 ```bash

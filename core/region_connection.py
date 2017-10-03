@@ -1,19 +1,19 @@
-import boto3.rds
-import boto3.iam
-import boto3.ec2
-import boto3.sqs
+import boto.rds
+import boto.iam
+import boto.ec2
+import boto.sqs
 
 from config import REGION
 
 
 def EC2Connection():
-    return boto3.ec2.connect_to_region(REGION)
+    return boto.ec2.connect_to_region(REGION)
 
 def RDSConnection():
-    return boto3.rds.connect_to_region(REGION)
+    return boto.rds.connect_to_region(REGION)
 
 def IAMConnection():
-    return boto3.iam.connect_to_region('universal')
+    return boto.iam.connect_to_region('universal')
 
 def SQSConnection():
-    return boto3.sqs.connect_to_region(REGION)
+    return boto.sqs.connect_to_region(REGION)
